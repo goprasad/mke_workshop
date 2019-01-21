@@ -27,7 +27,7 @@
       "mem": 4096
     },
     "high_availability": false,
-    "private_node_count": 6,
+    "private_node_count": 4,
     "private_node_placement": "[[\"@zone\",\"GROUP_BY\",\"1\"]]",
     "private_reserved_resources": {
       "kube_cpus": 1,

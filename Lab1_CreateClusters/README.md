@@ -7,30 +7,20 @@
 * 'kubernetes' user defined with password 'password'
 * 'kubernetes-cluster1' service account is defined
 
-## Steps to deploy a Kubernetes Cluster
-### Add the Kubernetes Cluster Manager
-1. Search for the Kubernetes Cluster Manager in the catalog
-![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-1.png)
+## Part 1: Deploy a Kubernetes Cluster
+### Add the Kubernetes Cluster 
 
-1. Select the Kubernetes Cluster manager and select review and run
-![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-2.png)
+1. Your cluster key properties
 
-1. Verify service account is blank, then select the Mesosphere Kubernetes Engine
-![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-3.png)
-
-1. Change the CPU count from 0.5 to 1, then click "review and run"
-![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-4.png)
-
-1. Click "Run Service" to begin the deployment
-![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-5.png) 
-
-![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-6.png)
-
+| Team Project Property | Project Value  |
+|-----------------------|----------------|
+| Cluster Name          |  ___________________________________              |
+| Public IP Address     |  ___________________________________              |
+|
 
 1. Verify the Kubernetes Cluster Manager has deployed
 ![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k_1-7.png)
 
-### Add a Kubernetes Cluster
 1. Search for the Kubernetes Cluster option in the catalog
 ![](https://raw.githubusercontent.com/markfjohnson/SBC_demo/master/Legacy/images/k-2-1.png)
 
@@ -77,5 +67,33 @@
 
 1. Click on the cluster name and then details to observe the additional 4 nodes getting added
 
+# TODO Address this section
 1. Find and review the Kubernetes documentation on-line.
+Mesosphere Kubernetes Engine/Cluster Documentation: https://docs.mesosphere.com/services/kubernetes/2.1.1-1.12.4
+
+## Part II: Automated Self Healing
+
+Kubernetes with DC/OS includes automated self-healing of Kubernetes infrastructure.
+
+We can demo this by killing the etcd-0 component of one of the Kubernetes cluster
+
+List your Kubernetes tasks:
+```
+dcos task | grep etcd
+```
+Output should resemble below
+```
+$ dcos task | grep etcd
+etcd-0-peer                                    172.12.25.146   root     R    kubernetes-cluster2__etcd-0-peer__c09966b0-379e-4519-ae10-5683db4926b0                           fc11bc38-dd26-4fbb-9011-cca26231f64b-S0  us-west-2  us-west-2b
+etcd-0-peer                                    172.12.25.146   root     R    kubernetes-cluster1__etcd-0-peer__98e0bc46-a7d7-4553-8749-a9bafb624ae1                           fc11bc38-dd26-4fbb-9011-cca26231f64b-S0  us-west-2  us-west-2b
+```
+      ` 
+Navigate to the DC/OS UI: Navigate to the DC/OS UI > Services > Kubernetes tab and open next to the terminal so you can see the components in the DC/OS UI. Use the search bar to search for etcd to observe auto-healing capabilities
+![]()
+
+
+Run the command below to kill the etcd-0 component of kubernetes-cluster1:
+
+dcos task exec -it kubernetes-cluster1__etcd-0 bash -c 'kill -9 $(pidof etcd)'
+
 
