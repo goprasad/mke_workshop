@@ -1,0 +1,31 @@
+{
+  "apiVersion": "V2",
+  "name": "istio-ingress-pool",
+  "count": 1,
+  "autoCertificate": true,
+  "haproxy": {
+    "frontends": [{
+      "bindPort": 8081,
+      "protocol": "HTTP",
+      "linkBackend": {
+        "defaultBackend": "istio-ingress"
+      }
+    }],
+    "backends": [{
+      "name": "istio-ingress",
+      "protocol": "HTTP",
+      "services": [{
+        "mesos": {
+          "frameworkName": "kubernetes-cluster",
+          "taskNamePattern": "kube-node"
+        },
+        "endpoint": {
+          "port": 31380
+        }
+      }]
+    }],
+    "stats": {
+      "bindPort": 6090
+    }
+  }
+}
