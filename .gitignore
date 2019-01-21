@@ -1,0 +1,11 @@
+*.log
+*.out
+.terraform
+*.tfstate
+*.backup
+t2.sh
+temp.sh
+test.sh
+*.pem
+temp.*
+.DS_Store
