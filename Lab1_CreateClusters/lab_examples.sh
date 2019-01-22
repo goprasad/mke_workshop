@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -x
-# TODO Setup the lab examples which contain steps the attendees will execute
-# TODO Update links in the README.md file
+
 dcos kubernetes cluster create --yes --options=k8s_options1.json
 dcos kubernetes cluster create --yes --options=k8s_options2.json
 dcos kubernetes cluster create --yes --options=k8s_options3.json
@@ -41,7 +40,7 @@ dcos kubernetes cluster kubeconfig \
     --verbose \
     --context-name=kubernetes-cluster1 \
     --cluster-name=kubernetes-cluster1 \
-    --apiserver-url=https://${PUBLIC_IP}:6444
+    --apiserver-url=https://${PUBLIC_IP}:6443
 
 
 kubectl config use-context kubernetes-cluster1
@@ -69,6 +68,6 @@ kubectl proxy
 
 # open in browser:::  http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 
-# TODO Update the readme
+
 # TODO Deploy a sample application
 
