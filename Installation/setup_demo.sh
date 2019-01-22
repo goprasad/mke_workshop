@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # WARNING: Before running this ensure you are logged into AWS CLI and that ssh-add -l has the appropriate keys available
-# TODO - Add workshop key rather than personal keys
+# TODO - define the Kubernetes cluster specific users mke{n}
+# TODO - Finish the installation documentation
 set -x
 eval $(maws li 110465657741_Mesosphere-PowerUser)
 export AWS_DEFAULT_REGION="us-west-2"
@@ -61,6 +62,7 @@ echo " Edge Installation Complete"
 echo "==================================="
 dcos edgelb list
 dcos edgelb status edgelb-kubernetes-cluster-proxy-basic
+dcos edgelb endpoints edgelb-kubernetes-cluster-proxy-basic
 dcos task exec -it edgelb-pool-0-server curl ifconfig.co
 
 # Define the workshop service accounts and permissions
