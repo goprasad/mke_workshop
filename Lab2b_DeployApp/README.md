@@ -1,1 +1,0 @@
-# Lab 2: Deploy a simple application in MKE
