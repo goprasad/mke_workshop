@@ -19,12 +19,24 @@ sleep 90
 dcos cluster setup --username bootstrapuser --password deleteme --no-check ${DCOS_MASTER}
 sleep 10
 dcos node
+echo "====================================="
+echo " Install Kubernetes users "
+echo "====================================="
+sh ./mke_groups_setup.sh
+sh ./mke_users_setup.sh 1
+sh ./mke_users_setup.sh 2
+sh ./mke_users_setup.sh 3
+sh ./mke_users_setup.sh 4
+sh ./mke_users_setup.sh 5
+sh ./mke_users_setup.sh 6
+sh ./mke_users_setup.sh 7
+
 echo "==================================="
 echo " Install Edge"
 echo "==================================="
 ## Setup Edge-LB
 dcos package install --yes dcos-enterprise-cli
-sleep 5
+sleep 10
 dcos package repo add --index=0 edgelb-pool https://downloads.mesosphere.com/edgelb-pool/v1.2.1/assets/stub-universe-edgelb-pool.json
 dcos package repo add --index=0 edgelb https://downloads.mesosphere.com/edgelb/v1.2.1/assets/stub-universe-edgelb.json
 
