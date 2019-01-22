@@ -76,13 +76,13 @@ Now that the proxy is setup, open your browser to the url: ```http://127.0.0.1:8
 
 1. The browser will display the dashboard login screen as it appears below.  You will want to specify the kubeconfig directory at "~/.kube/config"
 
-    ![](https://github.com/markfjohnson/mke_workshop/tree/master/Lab2-Deploy-Web-App/kubeconfig_login.png)
+    ![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab2-Deploy-Web-App/images/kubeconfig_login.png)
 
 1. Upon successful login, you will see the main Kubernetes Dashboard as shown below
-    ![](https://github.com/markfjohnson/mke_workshop/tree/master/Lab2-Deploy-Web-App/kubedashboard1.png)
+    ![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab2-Deploy-Web-App/images/kubedashboard1.png)
     
 1. Clicking on the "Nodes" icon wil show the nodes for your cluster as shown below:
-    ![](https://github.com/markfjohnson/mke_workshop/tree/master/Lab2-Deploy-Web-App/kubedashboard2.png)
+    ![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab2-Deploy-Web-App/images/kubedashboard2.png)
 
  
 ## Part III: Deploy a sample Application
