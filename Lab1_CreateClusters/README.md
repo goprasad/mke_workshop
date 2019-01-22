@@ -35,44 +35,44 @@ This lab is designed to expose the participant to the ease of creating a Kuberne
 
 When you have logged on successfully, you will see the following dashboard for the DC/OS instance to which you logged in.
 
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/dcos_main.png)
+![](images/dcos_main.png)
  
 1. Verify the Kubernetes Cluster Manager has deployed
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k_1-7.png)
+![](images/k_1-7.png)
 
 1. Search for the Kubernetes Cluster option in the catalog
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-1.png)
+![](images/k-2-1.png)
 
 1. Select the Kubernetes Cluster option and modify the default properties as shown in the screen prints below
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-2.png)
+![](images/k-2-2.png)
 
 
 1. For the Kubernetes cluster service, specify the Service name as "kubernetes-cluster1", the "Service Account Name" as "kubernetes-cluster1" and the "Service Account Secret" to "kubernetes-cluster1/sa"
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-3.png)
+![](images/k-2-3.png)
 
 1. Specify the Cpus to 1 as part of the "Kubernetes" section definition
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-4a.png)
+![](images/k-2-4a.png)
 
 1. Specify the kube-Cpus to 1 as part of the "Kubernetes" section definition.
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-4b.png)
+![](images/k-2-4b.png)
 
 1. Review the Calico CNI network section (You will not need to make any changes)
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-4c.png)
+![](images/k-2-4c.png)
 
 1. Change the etcd CPU count to 1
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-5.png)
+![](images/k-2-5.png)
 
 
 1. Click review and run to confirm the properties are properly selected, then click on "Run Service"
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-6.png)
+![](images/k-2-6.png)
 
 
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-7.png)
+![](images/k-2-7.png)
 
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-8.png)
+![](images/k-2-8.png)
 
 1. Click on the cluster name and explore the options while the cluster is deploying
-![](https://raw.githubusercontent.com/markfjohnson/mke_workshop/master/Lab1_CreateClusters/images/k-2-9.png)
+![](images/k-2-9.png)
 
 You have now successfully created a Kubernetes cluster.
 
