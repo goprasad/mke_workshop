@@ -36,7 +36,7 @@
       "system_cpus": 1,
       "system_mem": 1024
     },
-    "public_node_count": 0,
+    "public_node_count": 1,
     "public_node_placement": "[[\"@zone\",\"GROUP_BY\",\"1\"]]",
     "public_reserved_resources": {
       "kube_cpus": 0.5,

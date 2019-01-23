@@ -10,7 +10,7 @@ module "dcos" {
   cluster_name       = "mjohnsons-hdmk-demo"
   num_masters        = "1"
   num_private_agents = "8"
-  num_public_agents  = "1"
+  num_public_agents  = "2"
   bootstrap_instance_type = "t2.medium"
 #  public_agents_instance_type = "m4.xlarge"
 #  private_agents_instance_type = "m4.2xlarge"
@@ -29,7 +29,7 @@ module "dcos" {
 
   admin_ips           = ["${data.http.whatismyip.body}/32"]
    dcos_resolvers      = "\n   - 169.254.169.253"
-  public_agents_additional_ports = ["6090","9092", "9094", "6443", "6444","6445","6446","6447","6448","6449"]
+  public_agents_additional_ports = ["6090","9092", "9094", "6443", "6444","6445","6446","6447","6448","6449", "30001"]
 
   dcos_install_mode = "${var.dcos_install_mode}"
 

@@ -5,4 +5,6 @@ sh ./ Kubeconfig-setup.sh 3 6445
 sh ./ Kubeconfig-setup.sh 4 6446
 sh ./ Kubeconfig-setup.sh 5 6447
 sh ./ Kubeconfig-setup.sh 6 6448
-sh ./ Kubeconfig-setup.sh 7 6449
+
+# TODO Add some sample applications
+kubectl apply -f helloworld.yaml
